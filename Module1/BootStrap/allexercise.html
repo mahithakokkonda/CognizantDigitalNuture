@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Master Exercises</title>
+  <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.css">
+  <style>
+    .box { background: #f1f1f1; padding: 20px; border: 1px solid #ddd; text-align: center; }
+    .footer { height: 60px; background: #343a40; color: white; text-align: center; line-height: 60px; }
+    .badge-img { position: relative; }
+    .badge-img span { position: absolute; top: 10px; right: 10px; }
+  </style>
+</head>
+<body>
+  <div class="container my-5">
+
+    <!-- 3. Responsive Grid Layout -->
+    <div class="row">
+      <div class="col-12 col-md-6 col-lg-4 mb-4"><div class="box">Col 1</div></div>
+      <div class="col-12 col-md-6 col-lg-4 mb-4"><div class="box">Col 2</div></div>
+      <div class="col-12 col-md-6 col-lg-4 mb-4"><div class="box">Col 3</div></div>
+    </div>
+
+    <!-- 4. Column Layouts -->
+    <div class="row">
+      <div class="col-md-3 box">Sidebar</div>
+      <div class="col-md-9 box">Content Area</div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-sm-3 box">1</div>
+      <div class="col-sm-3 box">2</div>
+      <div class="col-sm-3 box">3</div>
+      <div class="col-sm-3 box">4</div>
+    </div>
+
+    <!-- 5. Alignment & Reordering -->
+    <div class="row justify-content-center align-items-center my-3" style="height:100px;">
+      <div class="col-6 text-center">Centered Content</div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 order-md-2 box">First on mobile</div>
+      <div class="col-md-6 order-md-1 box">Second on mobile</div>
+    </div>
+
+    <!-- 6. Flexbox Utilities -->
+    <nav class="d-flex flex-column flex-md-row bg-light p-3 my-3">
+      <a class="nav-link" href="#">Home</a>
+      <a class="nav-link" href="#">About</a>
+      <a class="nav-link" href="#">Contact</a>
+    </nav>
+    <div class="card d-flex flex-row justify-content-between align-items-center p-3">
+      <span>Left</span>
+      <span>Right</span>
+    </div>
+
+    <!-- 7. Typography -->
+    <div class="mt-4">
+      <h1 class="display-1">Heading</h1>
+      <p class="lead">This is a lead paragraph.</p>
+      <p class="text-muted fw-bold">Muted and Bold</p>
+      <p class="text-uppercase">uppercase</p>
+      <p class="text-lowercase">LOWERCASE</p>
+      <p class="text-capitalize">capitalize every word</p>
+    </div>
+
+    <!-- 8. Forms -->
+    <form class="my-4">
+      <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input type="text" class="form-control">
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control">
+      </div>
+      <div class="mb-3 form-check">
+        <input class="form-check-input" type="checkbox">
+        <label class="form-check-label">Remember me</label>
+      </div>
+      <div class="input-group mb-3">
+        <span class="input-group-text">@</span>
+        <input type="text" class="form-control" placeholder="Username">
+      </div>
+      <button class="btn btn-primary">Register</button>
+    </form>
+    <form class="form-floating">
+      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <label for="floatingInput">Email address</label>
+    </form>
+
+    <!-- 9. Buttons -->
+    <div class="my-4">
+      <button class="btn btn-primary">Primary</button>
+      <button class="btn btn-outline-success">Outline</button>
+      <div class="btn-group">
+        <button class="btn btn-info">Left</button>
+        <button class="btn btn-info">Middle</button>
+        <button class="btn btn-info">Right</button>
+      </div>
+    </div>
+
+    <!-- 10. Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">Logo</a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+        </ul>
+        <form class="d-flex">
+          <input class="form-control" type="search" placeholder="Search">
+          <button class="btn btn-outline-success">Search</button>
+        </form>
+      </div>
+    </nav>
+    <ul class="nav nav-tabs my-3">
+      <li class="nav-item"><a class="nav-link active" href="#">Tab 1</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Tab 2</a></li>
+    </ul>
+
+    <!-- 11. Cards & Media -->
+    <div class="card" style="width: 18rem;">
+      <img src="https://via.placeholder.com/150" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Profile</h5>
+        <p class="card-text">Some text</p>
+      </div>
+    </div>
+    <div class="d-flex my-3">
+      <img src="https://via.placeholder.com/64" class="me-3" alt="...">
+      <div>
+        <h5>Media title</h5>
+        <p>Media content goes here.</p>
+      </div>
+    </div>
+
+    <!-- 12. Spacing -->
+    <div class="m-3 p-2 bg-light">Spacing Applied</div>
+    <div class="py-5">Pricing Section (with spacing)</div>
+
+    <!-- 13. Colors -->
+    <div class="bg-primary text-white p-3">Dashboard Section</div>
+    <div class="bg-gradient bg-dark text-white p-3">Dark Gradient</div>
+
+    <!-- 14. Display -->
+    <div class="d-none d-md-block">Shown on md and up</div>
+    <div class="d-none d-md-block bg-info text-white p-2">Tablet Sidebar</div>
+
+    <!-- 15. Borders & Shadows -->
+    <img src="https://via.placeholder.com/100" class="border border-primary border-3 rounded-circle">
+    <div class="card shadow-lg rounded-pill mt-3 p-3">Shadow Card</div>
+
+    <!-- 16. Positioning -->
+    <div class="badge-img mt-4">
+      <img src="https://via.placeholder.com/150">
+      <span class="badge bg-danger position-absolute">New</span>
+    </div>
+
+    <!-- 17. Icons -->
+    <footer class="mt-5">
+      <i class="bi bi-facebook mx-2"></i>
+      <i class="bi bi-twitter mx-2"></i>
+      <button class="btn btn-link"><i class="bi bi-house"></i></button>
+    </footer>
+
+    <!-- 18. Plugins -->
+    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">Launch Modal</button>
+    <div class="modal fade" id="myModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Modal Title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">Modal body</div>
+        </div>
+      </div>
+    </div>
+    <div class="accordion my-3" id="accordionExample">
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#collapseOne">Accordion 1</button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show">
+          <div class="accordion-body">Accordion content</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fixed Footer -->
+  <div class="footer position-fixed bottom-0 w-100">Fixed Footer</div>
+
+  <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

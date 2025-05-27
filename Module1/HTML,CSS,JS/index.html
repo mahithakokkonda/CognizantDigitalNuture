@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CityConnect - Local Community Portal</title>
+    <style>
+        nav ul {
+    list-style: none; /* removes bullet points */
+    padding: 0;
+    margin: 0;
+    display: flex; /* makes list items horizontal */
+    justify-content: right; /* optional: centers the nav items */
+    gap: 25px; /* optional: adds space between items */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: black; /* customize as needed */
+    font-weight: bold;
+    font-size:25px;
+}
+
+        /* Internal CSS */
+        #welcomeBanner {
+            background-color: #007BFF; /* Blue background */
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .highlight {
+            background-color: #1d31d9;
+            font-weight: bold;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+
+        .event-image {
+            border: 3px solid #007BFF;
+            border-radius: 8px;
+            width: 150px;
+            height: 100px;
+            object-fit: cover;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 15px 20px;
+            margin-top: 20px;
+        }
+
+        caption {
+            caption-side: top;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        td {
+            text-align: center;
+            vertical-align: top;
+        }
+
+        figcaption {
+            margin-top: 5px;
+            font-style: italic;
+            font-size: 0.9em;
+        }
+
+        /* Form styling */
+        form {
+            max-width: 500px;
+            margin-top: 30px;
+            padding: 15px;
+            border: 2px solid #007BFF;
+            border-radius: 10px;
+            background-color: #f0f8ff;
+            font-family: Arial, sans-serif;
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        form input[type="text"],
+        form input[type="email"],
+        form input[type="date"],
+        form select,
+        form textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 1em;
+        }
+
+        form textarea {
+            resize: vertical;
+            height: 80px;
+        }
+
+        form button {
+            background-color: #007BFF;
+            color: white;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        form button:hover {
+            background-color: #0056b3;
+        }
+
+        output {
+            display: block;
+            margin-top: 20px;
+            font-weight: bold;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="help.html" target="_blank">Help</a></li>
+        </ul>
+    </nav>
+
+    <!-- Welcome Banner -->
+    <div id="welcomeBanner">
+        Welcome back, <span class="highlight">Mahitha</span>! 
+        Enjoy our <span style="color: red; font-weight: bold;">special offer</span> this week only.
+    </div>
+
+    <!-- Main -->
+    <main>
+        <!-- Home Section -->
+        <section id="home">
+            <h1>Welcome to CityConnect</h1>
+            <p>Your go-to portal for local events and services.</p>
+        </section>
+
+        <!-- Events Section -->
+        <section id="events">
+            <h2 class="highlight">Upcoming Events</h2>
+            <p>Explore community gatherings, festivals, and more.</p>
+
+            <!-- Image Gallery Table -->
+            <table>
+                <caption>Past Community Events Gallery</caption>
+                <tr>
+                    <td>
+                        <figure>
+                            <img src="event1.jpg" alt="City Marathon 2024" title="City Marathon 2024" class="event-image" />
+                            <figcaption>City Marathon 2024</figcaption>
+                        </figure>
+                    </td>
+                    <td>
+                        <figure>
+                            <img src="event2.jpg" alt="Summer Food Festival" title="Summer Food Festival" class="event-image" />
+                            <figcaption>Summer Food Festival</figcaption>
+                        </figure>
+                    </td>
+                    <td>
+                        <figure>
+                            <img src="event3.jpg" alt="Community Cleanup Drive" title="Community Cleanup Drive" class="event-image" />
+                            <figcaption>Cleanup Drive</figcaption>
+                        </figure>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <figure>
+                            <img src="event4.jpg" alt="Art & Craft Fair" title="Art & Craft Fair" class="event-image" />
+                            <figcaption>Art & Craft Fair</figcaption>
+                        </figure>
+                    </td>
+                    <td>
+                        <figure>
+                            <img src="event5.jpg" alt="Music in the Park" title="Music in the Park" class="event-image" />
+                            <figcaption>Music in the Park</figcaption>
+                        </figure>
+                    </td>
+                    <td>
+                        <figure>
+                            <img src="event6.jpg" alt="Local Theater Show" title="Local Theater Show" class="event-image" />
+                            <figcaption>Theater Show</figcaption>
+                        </figure>
+                    </td>
+                </tr>
+            </table>
+<label for="event">Select Event Type:</label>
+<select id="event" name="event" onchange="handleEventChange()">
+    <option value="">--Select--</option>
+    <option value="Workshop">Workshop</option>
+    <option value="Seminar">Seminar</option>
+    <option value="Webinar">Webinar</option>
+    <option value="Concert">Concert</option>
+</select>
+<p id="feeDisplay"></p>
+<button type="button" onclick="clearPreferences()">Clear Preferences</button>
+
+
+            <!-- Event Registration Form -->
+             
+            <form id="registrationForm">
+                <h3>Register for an Event</h3>
+
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your full name" required autofocus />
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="your.email@example.com" required />
+
+                <label for="date">Event Date:</label>
+                <input type="date" id="date" name="date" required />
+
+                <label for="eventType">Event Type:</label>
+                <select id="eventType" name="eventType" required>
+                    <option value="" disabled selected>Select an event</option>
+                    <option value="marathon">City Marathon</option>
+                    <option value="foodFestival">Food Festival</option>
+                    <option value="cleanup">Cleanup Drive</option>
+                    <option value="artFair">Art & Craft Fair</option>
+                    <option value="musicPark">Music in the Park</option>
+                    <option value="theaterShow">Local Theater Show</option>
+                </select>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" placeholder="Any special requests or comments"></textarea>
+
+                <button type="submit">Submit Registration</button>
+
+                <output id="confirmationMessage" for="registrationForm"></output>
+            </form>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Reach out for questions, suggestions, or support.</p>
+         <!-- Event Feedback Section -->
+<form id="feedbackForm">
+    <h3>Event Feedback</h3>
+
+    <label for="phone">Phone Number:</label>
+    <input type="text" id="phone" placeholder="Enter 10-digit phone number" onblur="validatePhone()" required />
+
+    <label for="feeSelect">Select Event Type to See Fee:</label>
+    <select id="feeSelect" onchange="showFee()">
+        <option value="" disabled selected>Select event</option>
+        <option value="marathon">City Marathon - ₹500</option>
+        <option value="foodFestival">Food Festival - ₹300</option>
+        <option value="cleanup">Cleanup Drive - Free</option>
+    </select>
+    <p id="feeDisplay" style="font-weight:bold; color:#007BFF;"></p>
+
+    <label for="feedback">Your Feedback:</label>
+    <textarea id="feedback" placeholder="Type your feedback..." onkeyup="countChars()"></textarea>
+    <p>Characters typed: <span id="charCount">0</span></p>
+
+    <button type="button" onclick="submitFeedback()">Submit Feedback</button>
+</form>
+
+<!-- Clickable image to demonstrate ondblclick -->
+<h4>Double-click image to enlarge:</h4>
+<img src="event1.jpg" alt="Sample Event" id="feedbackImage" style="width:150px; height:100px; cursor:pointer;" ondblclick="enlargeImage()" />
+<!-- Video Invite Section -->
+<section id="videoInvite">
+    <h3>Event Promo Video</h3>
+    <video id="promoVideo" width="320" height="240" controls oncanplay="videoReadyMessage()">
+        <source src="promo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <p id="videoStatus" style="color: green; font-weight: bold;"></p>
+</section>
+
+
+        </section>
+
+    </main>
+<button onclick="findNearbyEvents()">Find Nearby Events</button>
+<p id="locationResult"></p>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 CityConnect. All rights reserved.</p>
+    </footer>
+
+    <script>
+// Save selected event type to localStorage and sessionStorage
+function handleEventChange() {
+    const eventSelect = document.getElementById('event');
+    const selected = eventSelect.value;
+    localStorage.setItem('preferredEvent', selected);
+    sessionStorage.setItem('sessionEvent', selected);
+    
+    // Optional: show event fee
+    const feeDisplay = document.getElementById('feeDisplay');
+    const fees = {
+        Workshop: "$100",
+        Seminar: "$75",
+        Webinar: "$50",
+        Concert: "$150"
+    };
+    feeDisplay.textContent = fees[selected] || "";
+}
+
+// Load saved preference on page load
+window.onload = function() {
+    const savedEvent = localStorage.getItem('preferredEvent');
+    if (savedEvent) {
+        const eventSelect = document.getElementById('event');
+        eventSelect.value = savedEvent;
+        handleEventChange(); // show fee too
+    }
+};
+
+// Clear both localStorage and sessionStorage
+function clearPreferences() {
+    localStorage.removeItem('preferredEvent');
+    sessionStorage.removeItem('sessionEvent');
+    document.getElementById('event').value = "";
+    document.getElementById('feeDisplay').textContent = "";
+    alert("Preferences cleared.");
+}
+
+        // JavaScript to handle form submission and show confirmation message
+        document.getElementById('registrationForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent page reload
+
+            const name = document.getElementById('name').value;
+            const eventType = document.getElementById('eventType').selectedOptions[0].text;
+            const date = document.getElementById('date').value;
+
+            const confirmation = `Thank you, ${name}! You are registered for the "${eventType}" on ${date}.`;
+
+            document.getElementById('confirmationMessage').textContent = confirmation;
+
+            // Optionally, reset the form after submission
+            this.reset();
+        });
+function validatePhone() {
+    const phone = document.getElementById('phone').value;
+    const regex = /^\d{10}$/;
+    if (!regex.test(phone)) {
+        alert('Please enter a valid 10-digit phone number.');
+    }
+}
+
+function showFee() {
+    const select = document.getElementById('feeSelect');
+    const selectedText = select.options[select.selectedIndex].text;
+    document.getElementById('feeDisplay').textContent = `Selected Fee: ${selectedText.split('-')[1].trim()}`;
+}
+
+function submitFeedback() {
+    alert('Thank you for your feedback!');
+}
+
+function enlargeImage() {
+    const img = document.getElementById('feedbackImage');
+    img.style.width = "300px";
+    img.style.height = "200px";
+}
+
+function countChars() {
+    const feedback = document.getElementById('feedback').value;
+    document.getElementById('charCount').textContent = feedback.length;
+}
+function videoReadyMessage() {
+    document.getElementById('videoStatus').textContent = "Video ready to play";
+}
+
+window.onbeforeunload = function () {
+    const phoneFilled = document.getElementById('phone')?.value.trim() !== "";
+    const feedbackFilled = document.getElementById('feedback')?.value.trim() !== "";
+    if (phoneFilled || feedbackFilled) {
+        return "You have unsaved changes. Are you sure you want to leave this page?";
+    }
+};
+function findNearbyEvents() {
+    const locationResult = document.getElementById('locationResult');
+    
+    if (!navigator.geolocation) {
+        locationResult.textContent = "Geolocation is not supported by your browser.";
+        return;
+    }
+
+    locationResult.textContent = "Locating...";
+
+    const options = {
+        enableHighAccuracy: true, // Use GPS if available
+        timeout: 10000,           // Wait up to 10 seconds
+        maximumAge: 0             // Do not use cached position
+    };
+
+    navigator.geolocation.getCurrentPosition(
+        (position) => {
+            const lat = position.coords.latitude.toFixed(6);
+            const lon = position.coords.longitude.toFixed(6);
+            locationResult.textContent = `Your coordinates: Latitude ${lat}, Longitude ${lon}`;
+        },
+        (error) => {
+            switch (error.code) {
+                case error.PERMISSION_DENIED:
+                    locationResult.textContent = "Permission denied. Please allow location access.";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    locationResult.textContent = "Location information is unavailable.";
+                    break;
+                case error.TIMEOUT:
+                    locationResult.textContent = "Request timed out. Try again.";
+                    break;
+                default:
+                    locationResult.textContent = "An unknown error occurred.";
+            }
+        },
+        options
+    );
+}
+
+    </script>
+</body>
+</html>
